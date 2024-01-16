@@ -48,10 +48,10 @@ public class IntermediateMethodRunner {
         System.out.println("-------------------------------------");
         //distinct()
         List<Car> carList = List.of(
-                new Car("Audi", "RS4 B7"),
-                new Car("BMW", "M3 e92"),
-                new Car("BMW", "M3 e92"),
-                new Car("Mercedes-Benz", "C63 AMG")
+                new Car("Audi", "RS4 B7", 100000),
+                new Car("BMW", "M3 e92",100000),
+                new Car("BMW", "M3 e92",100000),
+                new Car("Mercedes-Benz", "C63 AMG",200000)
         );
 
         carList.stream()
@@ -102,13 +102,13 @@ public class IntermediateMethodRunner {
 
         //flatMap()
         Car[] sportCarArray = {
-                new Car("Ferrari", "488 GTB"),
-                new Car("Lamborghini", "Huracan EVO")
+                new Car("Ferrari", "488 GTB",2000000),
+                new Car("Lamborghini", "Huracan EVO", 2000000)
         };
 
         Car[] suvCarArray = {
-                new Car("BMW", "X5M"),
-                new Car("Lamborghini", "Urus")
+                new Car("BMW", "X5M", 500000),
+                new Car("Lamborghini", "Urus",1500000)
         };
         List<Car[]> carsArraysList = List.of(sportCarArray, suvCarArray);
         System.out.println(carsArraysList);

@@ -5,10 +5,13 @@ import java.util.Objects;
 public class Car {
     private String producer;
     private String model;
+    private int price;
 
-    public Car(String producer, String model) {
+    public Car(String producer, String model, int price) {
         this.producer = producer;
         this.model = model;
+        this.price = price;
+
     }
 
     public String getProducer() {
@@ -27,17 +30,25 @@ public class Car {
         this.model = model;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return Objects.equals(producer, car.producer) && Objects.equals(model, car.model);
+        return price == car.price && Objects.equals(producer, car.producer) && Objects.equals(model, car.model);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(producer, model);
+        return Objects.hash(producer, model, price);
     }
 
     @Override
@@ -45,6 +56,7 @@ public class Car {
         return "Car{" +
                 "producer='" + producer + '\'' +
                 ", model='" + model + '\'' +
+                ", price=" + price +
                 '}';
     }
 }
