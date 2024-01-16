@@ -59,7 +59,7 @@ public class ExcerciseRunner {
                 .filter(animal -> animal instanceof Cat)
                 .max(Comparator.comparingInt(Animal::getAge))
                 .orElseThrow();
-        System.out.println(oldestCat);
+        System.out.println("Oldest cat: " +oldestCat);
 
         animals.stream()
                 .filter(animal -> animal instanceof Dog)
