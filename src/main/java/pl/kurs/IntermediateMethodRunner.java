@@ -1,6 +1,7 @@
 package pl.kurs;
 
 import pl.kurs.model.Car;
+import pl.kurs.model.CarCetagory;
 import pl.kurs.model.Employee;
 
 import java.util.Arrays;
@@ -48,10 +49,10 @@ public class IntermediateMethodRunner {
         System.out.println("-------------------------------------");
         //distinct()
         List<Car> carList = List.of(
-                new Car("Audi", "RS4 B7", 100000),
-                new Car("BMW", "M3 e92",100000),
-                new Car("BMW", "M3 e92",100000),
-                new Car("Mercedes-Benz", "C63 AMG",200000)
+                new Car("Audi", "RS4 B7", 100000, CarCetagory.SPORTS_CAR),
+                new Car("BMW", "M3 e92",100000, CarCetagory.SPORTS_CAR),
+                new Car("BMW", "M3 e92",100000, CarCetagory.SPORTS_CAR),
+                new Car("Mercedes-Benz", "C63 AMG",200000, CarCetagory.SPORTS_CAR)
         );
 
         carList.stream()
@@ -102,13 +103,13 @@ public class IntermediateMethodRunner {
 
         //flatMap()
         Car[] sportCarArray = {
-                new Car("Ferrari", "488 GTB",2000000),
-                new Car("Lamborghini", "Huracan EVO", 2000000)
+                new Car("Ferrari", "488 GTB",2000000, CarCetagory.SUPER_CAR),
+                new Car("Lamborghini", "Huracan EVO", 2000000, CarCetagory.SUPER_CAR)
         };
 
         Car[] suvCarArray = {
-                new Car("BMW", "X5M", 500000),
-                new Car("Lamborghini", "Urus",1500000)
+                new Car("BMW", "X5M", 500000, CarCetagory.SUV),
+                new Car("Lamborghini", "Urus",1500000, CarCetagory.SUV)
         };
         List<Car[]> carsArraysList = List.of(sportCarArray, suvCarArray);
         System.out.println(carsArraysList);
